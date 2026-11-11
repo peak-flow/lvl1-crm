@@ -35,6 +35,7 @@ No starter kit was used. Sign-up and login are hand-written so a lesson can expl
 ## Lessons
 
 - A lesson is a markdown file in `docs/lessons/`, named `NN-slug.md`. The number sets the order.
+- `00-how-laravel-and-livewire-fit-together.md` is the start-here guide, not tied to a feature. It lives on `main` only, not on the earlier lesson branches.
 - The first line must be `# Title`. `LessonController` throws if it is missing.
 - The same file is readable on GitHub and rendered at `/learn/NN-slug` with `Str::markdown`.
 - Only slugs that match an existing file are served; anything else is a 404.

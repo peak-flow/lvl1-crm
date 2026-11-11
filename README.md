@@ -19,6 +19,7 @@ You do not need to know PHP to start. Each lesson explains new ideas the first t
 
 | # | Lesson | Feature |
 | --- | --- | --- |
+| 0 | [Start here: How Laravel and Livewire fit together](docs/lessons/00-how-laravel-and-livewire-fit-together.md) | The project's folders, and what happens when you click a button |
 | 1 | [Member sign-up and login](docs/lessons/01-member-sign-up-and-login.md) | Accounts, sign-in, sign-out |
 | 2 | [The ideas board](docs/lessons/02-ideas-board.md) | Posting ideas, upvoting, your own database tables |
 | 3 | [Membership plans, statuses, and admins](docs/lessons/03-membership-plans.md) | Plans, statuses, admin-only pages, your own terminal command |
@@ -165,6 +166,15 @@ Leave the first terminal window open while you work. To stop the site, press `Ct
 3. Refresh the page in your browser. Your change is there.
 
 Now read [Lesson 1](docs/lessons/01-member-sign-up-and-login.md) to see how sign-up and login work.
+
+## Learning resources
+
+- [Laravel documentation](https://laravel.com/docs)
+- [Livewire documentation](https://livewire.laravel.com/docs)
+- [Laracasts](https://laracasts.com): video courses on PHP, Laravel and Livewire
+- [Laravel Daily](https://laraveldaily.com): short, practical tutorials and courses
+
+The [Start here guide](docs/lessons/00-how-laravel-and-livewire-fit-together.md) has a longer list with links to the most useful pages.
 
 ## Run the tests
 

@@ -13,6 +13,7 @@ Each feature ships with a lesson in `docs/lessons/` and is built one at a time.
 - [x] One branch per lesson (`lesson-NN-short-name`)
 - [x] Feature 3: membership plans, statuses, basic admin flag, admin pages to set plan and status
 - [x] Lesson 3: `docs/lessons/03-membership-plans.md`
+- [x] Start-here guide: `docs/lessons/00-how-laravel-and-livewire-fit-together.md`
 
 ## Next (order not yet agreed)
 
