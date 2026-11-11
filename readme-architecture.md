@@ -19,7 +19,11 @@ No starter kit was used. Sign-up and login are hand-written so a lesson can expl
 | `routes/web.php` | Every address the site answers |
 | `app/Livewire/Auth/` | `Register` and `Login` components |
 | `app/Livewire/Ideas/IdeaBoard.php` | Ideas board: post, list, upvote |
-| `app/Models/` | `User` (members) and `Idea` |
+| `app/Models/` | `User` (members), `Idea`, `MembershipPlan` |
+| `app/Enums/MembershipStatus.php` | The four allowed membership statuses |
+| `app/Livewire/Admin/` | `MemberList` and `EditMembership`, admin only |
+| `app/Console/Commands/MakeMemberAdmin.php` | `php artisan members:make-admin {email}` |
+| `database/seeders/MembershipPlanSeeder.php` | Example plans |
 | `app/Http/Controllers/LogoutController.php` | Sign-out |
 | `app/Http/Controllers/LessonController.php` | Lists and renders lessons |
 | `resources/views/layouts/app.blade.php` | Shared page shell and top bar |
@@ -57,6 +61,17 @@ No starter kit was used. Sign-up and login are hand-written so a lesson can expl
 - Vote counts are never stored; they are counted from `idea_votes` when the list is built.
 - Voting is a toggle: pressing again removes the vote.
 - Not built yet: moderation, editing or deleting ideas, paging for long lists.
+
+## Membership and admins
+
+- `membership_plans` holds the plans. Prices are whole cents. The three seeded plans and their prices are examples, not the space's real ones.
+- `users` carries `membership_plan_id` (nullable), `membership_status`, and `is_admin`.
+- Status is the `MembershipStatus` enum: active, paused, lapsed, banned. New members start active.
+- Status is a label only. Nothing enforces it yet; a banned member can still sign in.
+- Authorization is one gate, `manage-members`, defined in `AppServiceProvider` and true when `is_admin` is true. It guards the `/admin/*` routes, is re-checked inside `EditMembership::save()`, and hides the Members link.
+- `is_admin`, `membership_status` and `membership_plan_id` are deliberately not mass-assignable; they are set one at a time.
+- The first admin is made with `php artisan members:make-admin {email}`. There is no way to grant or remove admin from the site yet.
+- The seeder uses `firstOrCreate` by plan name, so it is safe to re-run and never overwrites an existing plan.
 
 ## Language tracks
 

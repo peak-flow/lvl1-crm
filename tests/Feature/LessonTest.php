@@ -3,7 +3,11 @@
 it('lists the lessons', function () {
     $this->get('/learn')
         ->assertOk()
-        ->assertSeeInOrder(['Lesson 1: Member sign-up and login', 'Lesson 2: The ideas board']);
+        ->assertSeeInOrder([
+            'Lesson 1: Member sign-up and login',
+            'Lesson 2: The ideas board',
+            'Lesson 3: Membership plans, statuses, and admins',
+        ]);
 });
 
 it('shows a lesson as a web page', function () {

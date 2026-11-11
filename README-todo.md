@@ -10,13 +10,19 @@ Each feature ships with a lesson in `docs/lessons/` and is built one at a time.
 - [x] `/learn` pages that render the lesson markdown
 - [x] Feature 2: ideas board with upvotes, members only (Rob's suggestion)
 - [x] Lesson 2: `docs/lessons/02-ideas-board.md`
+- [x] One branch per lesson (`lesson-NN-short-name`)
+- [x] Feature 3: membership plans, statuses, basic admin flag, admin pages to set plan and status
+- [x] Lesson 3: `docs/lessons/03-membership-plans.md`
 
 ## Next (order not yet agreed)
 
 - [ ] Liability waiver and emergency contact at sign-up
-- [ ] Membership plans and statuses (active, paused, lapsed, banned)
-- [ ] Roles: member, board, admin
-- [ ] Admin member list: search, filter, notes, CSV export
+- [ ] Replace the example plans and prices with the space's real ones
+- [ ] Make statuses do something (for example, stop a banned member signing in)
+- [ ] Admin pages to add, edit and retire plans
+- [ ] Roles beyond the single admin flag: board, admin
+- [ ] Admin member list: search, filter, notes, CSV export (a basic list exists)
+- [ ] Let an admin make or remove other admins from the site
 - [ ] Recurring dues (Stripe or PayPal: not chosen)
 - [ ] Member self-service profile
 - [ ] Tool training sign-offs

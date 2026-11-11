@@ -8,6 +8,7 @@ Every feature comes with a lesson that explains what it does, the code behind it
 
 - Sign up, sign in, and sign out
 - An ideas board where members suggest improvements for the space and upvote them
+- Membership plans and statuses, with admins who can set them for any member
 - A lessons section at `/learn`
 
 What comes next is in [README-todo.md](README-todo.md).
@@ -20,6 +21,7 @@ You do not need to know PHP to start. Each lesson explains new ideas the first t
 | --- | --- | --- |
 | 1 | [Member sign-up and login](docs/lessons/01-member-sign-up-and-login.md) | Accounts, sign-in, sign-out |
 | 2 | [The ideas board](docs/lessons/02-ideas-board.md) | Posting ideas, upvoting, your own database tables |
+| 3 | [Membership plans, statuses, and admins](docs/lessons/03-membership-plans.md) | Plans, statuses, admin-only pages, your own terminal command |
 
 The same lessons are shown inside the running site at `/learn`.
 
@@ -31,6 +33,7 @@ Every lesson has its own Git branch. A branch holds the whole project exactly as
 | --- | --- |
 | `lesson-01-sign-up-login` | Lesson 1 |
 | `lesson-02-ideas-board` | Lesson 2 |
+| `lesson-03-membership-plans` | Lesson 3 |
 | `main` | The newest lesson, plus any fixes since |
 
 To jump to a lesson, run these from the `lvl1-crm` project folder:
@@ -41,7 +44,7 @@ composer install
 php artisan migrate
 ```
 
-`git switch` swaps the files in your folder for that branch's version. The other two commands bring the PHP packages and the database in line with it.
+`git switch` swaps the files in your folder for that branch's version. The other two commands bring the PHP packages and the database in line with it. From Lesson 3 onwards, also run `php artisan db:seed` to add the example membership plans.
 
 Useful commands while you explore:
 
@@ -128,7 +131,7 @@ composer install
 npm install
 cp .env.example .env
 php artisan key:generate
-php artisan migrate
+php artisan migrate --seed
 composer run dev
 ```
 
@@ -142,12 +145,18 @@ What each line does:
 | `npm install` | Fetches the tools that build the styles |
 | `cp .env.example .env` | Creates your personal settings file |
 | `php artisan key:generate` | Writes a secret key into that settings file |
-| `php artisan migrate` | Creates the database tables |
+| `php artisan migrate --seed` | Creates the database tables and adds the example membership plans |
 | `composer run dev` | Starts the site |
 
 Open <http://localhost:8000> and click **Join**. The database is a single SQLite file on your machine, so there is nothing else to install and nothing you can break.
 
-Leave that terminal window open while you work. To stop the site, press `Ctrl` + `C` in it. To start it again later, run `composer run dev` from the `lvl1-crm` folder.
+To see the admin pages, make yourself an admin. Open a second terminal in the `lvl1-crm` folder and run this with the email you signed up with:
+
+```sh
+php artisan members:make-admin you@example.com
+```
+
+Leave the first terminal window open while you work. To stop the site, press `Ctrl` + `C` in it. To start it again later, run `composer run dev` from the `lvl1-crm` folder.
 
 ### Step 3: make a change
 
