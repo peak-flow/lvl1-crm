@@ -1,7 +1,9 @@
 <?php
 
 it('lists the lessons', function () {
-    $this->get('/learn')->assertOk()->assertSee('Lesson 1: Member sign-up and login');
+    $this->get('/learn')
+        ->assertOk()
+        ->assertSeeInOrder(['Lesson 1: Member sign-up and login', 'Lesson 2: The ideas board']);
 });
 
 it('shows a lesson as a web page', function () {

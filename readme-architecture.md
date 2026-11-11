@@ -18,6 +18,8 @@ No starter kit was used. Sign-up and login are hand-written so a lesson can expl
 | --- | --- |
 | `routes/web.php` | Every address the site answers |
 | `app/Livewire/Auth/` | `Register` and `Login` components |
+| `app/Livewire/Ideas/IdeaBoard.php` | Ideas board: post, list, upvote |
+| `app/Models/` | `User` (members) and `Idea` |
 | `app/Http/Controllers/LogoutController.php` | Sign-out |
 | `app/Http/Controllers/LessonController.php` | Lists and renders lessons |
 | `resources/views/layouts/app.blade.php` | Shared page shell and top bar |
@@ -40,6 +42,15 @@ No starter kit was used. Sign-up and login are hand-written so a lesson can expl
 - Passwords are hashed by the model's `hashed` cast.
 - `guest` middleware guards `/register` and `/login`; `auth` guards `/dashboard` and `/logout`.
 - Not built yet: password reset, email verification, login rate limiting.
+
+## Ideas board
+
+- Members only: `/ideas` sits in the `auth` route group.
+- `ideas` holds one row per idea and belongs to the member who posted it.
+- `idea_votes` holds one row per member per idea, with a unique index on the pair, so a double vote is impossible at the database level.
+- Vote counts are never stored; they are counted from `idea_votes` when the list is built.
+- Voting is a toggle: pressing again removes the vote.
+- Not built yet: moderation, editing or deleting ideas, paging for long lists.
 
 ## Language tracks
 

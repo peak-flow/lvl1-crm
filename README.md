@@ -7,6 +7,7 @@ Every feature comes with a lesson that explains what it does, the code behind it
 ## What works today
 
 - Sign up, sign in, and sign out
+- An ideas board where members suggest improvements for the space and upvote them
 - A lessons section at `/learn`
 
 What comes next is in [README-todo.md](README-todo.md).
@@ -18,6 +19,7 @@ You do not need to know PHP to start. Each lesson explains new ideas the first t
 | # | Lesson | Feature |
 | --- | --- | --- |
 | 1 | [Member sign-up and login](docs/lessons/01-member-sign-up-and-login.md) | Accounts, sign-in, sign-out |
+| 2 | [The ideas board](docs/lessons/02-ideas-board.md) | Posting ideas, upvoting, your own database tables |
 
 The same lessons are shown inside the running site at `/learn`.
 
