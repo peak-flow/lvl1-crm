@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\LogoutController;
+use App\Livewire\Admin\EditMembership;
+use App\Livewire\Admin\MemberList;
 use App\Livewire\Auth\Login;
 use App\Livewire\Auth\Register;
 use App\Livewire\Ideas\IdeaBoard;
@@ -21,4 +23,9 @@ Route::middleware('auth')->group(function () {
     Route::view('/dashboard', 'dashboard')->name('dashboard');
     Route::livewire('/ideas', IdeaBoard::class)->name('ideas.index');
     Route::post('/logout', LogoutController::class)->name('logout');
+
+    Route::middleware('can:manage-members')->group(function () {
+        Route::livewire('/admin/members', MemberList::class)->name('admin.members.index');
+        Route::livewire('/admin/members/{member}', EditMembership::class)->name('admin.members.edit');
+    });
 });

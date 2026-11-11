@@ -20,6 +20,9 @@
                     @auth
                         <a href="{{ route('dashboard') }}">Dashboard</a>
                         <a href="{{ route('ideas.index') }}">Ideas</a>
+                        @can('manage-members')
+                            <a href="{{ route('admin.members.index') }}">Members</a>
+                        @endcan
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <button type="submit" class="underline">Sign out</button>
