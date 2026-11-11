@@ -19,6 +19,7 @@
                 <div class="ml-auto flex items-center gap-4">
                     @auth
                         <a href="{{ route('dashboard') }}">Dashboard</a>
+                        <a href="{{ route('ideas.index') }}">Ideas</a>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <button type="submit" class="underline">Sign out</button>
