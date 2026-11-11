@@ -87,6 +87,14 @@ No starter kit was used. Sign-up and login are hand-written so a lesson can expl
 - The waiver wording is a placeholder, not legal text. Only the date of agreement is stored, not which wording was agreed to.
 - Emergency contacts are visible to the member and to admins only.
 
+## Style ideas
+
+- `/style-ideas` is a public gallery of design mock-ups. It is not a feature and has no lesson or lesson branch.
+- `StyleIdeaController` holds one array of made-up data and passes the same array to every style, so the styles differ only in design. Nothing is read from or written to the database.
+- Each style is a standalone Blade page in `resources/views/style-ideas/` with its own `<style>` block. They do not use the app layout or Tailwind, so a style can be deleted without touching anything else.
+- Their typefaces (Zilla Slab, Jost, Barlow, Barlow Condensed) are downloaded and self-hosted at build time by the fonts option in `vite.config.js`, and each page loads only its own with `@fonts([...])`.
+- Adding a style: add an entry to `STYLES` in the controller and a Blade file named after its slug.
+
 ## Language tracks
 
 Laravel only for now. If a Python track is added later, the plan is one language-neutral spec per feature that each track implements.

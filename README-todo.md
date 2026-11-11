@@ -16,6 +16,7 @@ Each feature ships with a lesson in `docs/lessons/` and is built one at a time.
 - [x] Start-here guide: `docs/lessons/00-how-laravel-and-livewire-fit-together.md`
 - [x] Feature 4: waiver and emergency contact page; ideas board locked until signed
 - [x] Lesson 4: `docs/lessons/04-waiver-and-emergency-contact.md`
+- [x] Style ideas section: Pegboard, Cutting mat, Safety signs (static mock-ups, no database, no lesson)
 
 ## Next (order not yet agreed)
 
@@ -36,6 +37,7 @@ Each feature ships with a lesson in `docs/lessons/` and is built one at a time.
 
 ## Open questions
 
+- Which style idea (if any) should the real site adopt?
 - Is "LVL1 Members" the right site name? It was taken from the folder name.
 - What handles dues and door access at the space today?
 - Password reset and email verification need a mail service: which one?
