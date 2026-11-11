@@ -29,4 +29,3 @@ Each feature ships with a lesson in `docs/lessons/` and is built one at a time.
 - Is "LVL1 Members" the right site name? It was taken from the folder name.
 - What handles dues and door access at the space today?
 - Password reset and email verification need a mail service: which one?
-- Should each lesson get a git tag, so members can check out the code as it was at that lesson?

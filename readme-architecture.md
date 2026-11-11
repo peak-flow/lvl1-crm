@@ -36,6 +36,12 @@ No starter kit was used. Sign-up and login are hand-written so a lesson can expl
 - Only slugs that match an existing file are served; anything else is a 404.
 - Lesson HTML is printed unescaped because lessons are written by maintainers and live in the repository. If members can ever submit lessons through the site, that must change.
 
+## Branches
+
+- `main` is the newest working version.
+- Each feature is built on a branch named `lesson-NN-short-name`, merged into `main`, and then kept as the snapshot of the project at the end of that lesson.
+- Snapshot branches are not updated afterwards. A fix made later lands on `main` only, so an old lesson branch can show code that has since changed.
+
 ## Authentication
 
 - Members are rows in the `users` table (`App\Models\User`).

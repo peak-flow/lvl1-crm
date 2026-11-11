@@ -23,6 +23,37 @@ You do not need to know PHP to start. Each lesson explains new ideas the first t
 
 The same lessons are shown inside the running site at `/learn`.
 
+### See the code as it was at each lesson
+
+Every lesson has its own Git branch. A branch holds the whole project exactly as it was when that lesson's feature was finished, so you can step through the site growing one feature at a time.
+
+| Branch | The project after |
+| --- | --- |
+| `lesson-01-sign-up-login` | Lesson 1 |
+| `lesson-02-ideas-board` | Lesson 2 |
+| `main` | The newest lesson, plus any fixes since |
+
+To jump to a lesson, run these from the `lvl1-crm` project folder:
+
+```sh
+git switch lesson-01-sign-up-login
+composer install
+php artisan migrate
+```
+
+`git switch` swaps the files in your folder for that branch's version. The other two commands bring the PHP packages and the database in line with it.
+
+Useful commands while you explore:
+
+| Command | What it does |
+| --- | --- |
+| `git branch -a` | Lists every branch |
+| `git switch main` | Returns to the newest version |
+| `git diff lesson-01-sign-up-login lesson-02-ideas-board` | Shows everything Lesson 2 added |
+| `git status` | Shows which branch you are on and what you have changed |
+
+If Git refuses to switch because you have changed files, either save your work with `git stash` or undo it with `git restore .` first.
+
 ## Run it on your machine
 
 There are two steps: install the tools once, then download and start the project. It takes about 15 minutes.
@@ -149,6 +180,6 @@ More detail is in [readme-architecture.md](readme-architecture.md).
 3. Pick something from [README-todo.md](README-todo.md), or open an issue with your idea.
 4. Make your change on a branch, run the tests, and open a pull request.
 
-New features follow one rule: the feature and its lesson ship together. A lesson is a markdown file in `docs/lessons/`, named like `02-short-name.md`, and its first line is its title.
+New features follow two rules: the feature and its lesson ship together, and each feature is built on its own branch named `lesson-NN-short-name`. The branch is kept after it is merged into `main`, so it stays as that lesson's snapshot. A lesson is a markdown file in `docs/lessons/`, named like `02-short-name.md`, and its first line is its title.
 
 Questions are welcome in the makerspace Discord.
