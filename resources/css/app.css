@@ -1,0 +1,84 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* Form and button styles shared by every page. */
+.form-label {
+    @apply block text-sm font-medium;
+}
+
+.form-input {
+    @apply mt-1 block w-full rounded border border-stone-300 bg-white px-3 py-2;
+}
+
+.form-error {
+    @apply mt-1 text-sm text-red-700;
+}
+
+.button-primary {
+    @apply inline-block rounded bg-stone-900 px-4 py-2 text-sm font-medium text-white;
+}
+
+.button-secondary {
+    @apply inline-block rounded border border-stone-300 bg-white px-4 py-2 text-sm font-medium;
+}
+
+/* Lessons are plain markdown turned into HTML, so their tags are styled here. */
+.lesson {
+    @apply max-w-prose leading-7;
+}
+
+.lesson h1 {
+    @apply text-3xl font-semibold;
+}
+
+.lesson h2 {
+    @apply mt-10 text-xl font-semibold;
+}
+
+.lesson h3 {
+    @apply mt-6 font-semibold;
+}
+
+.lesson p,
+.lesson ul,
+.lesson ol,
+.lesson pre,
+.lesson table {
+    @apply mt-4;
+}
+
+.lesson ul {
+    @apply list-disc pl-6;
+}
+
+.lesson ol {
+    @apply list-decimal pl-6;
+}
+
+.lesson a {
+    @apply underline;
+}
+
+.lesson code {
+    @apply rounded bg-stone-200 px-1 py-0.5 text-sm;
+}
+
+.lesson pre {
+    @apply overflow-x-auto rounded bg-stone-900 p-4 text-stone-100;
+}
+
+.lesson pre code {
+    @apply bg-transparent p-0;
+}
+
+.lesson th,
+.lesson td {
+    @apply border border-stone-300 px-3 py-1 text-left align-top;
+}
