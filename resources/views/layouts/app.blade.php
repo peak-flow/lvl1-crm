@@ -16,6 +16,7 @@
                 <a href="{{ route('home') }}" class="font-semibold">{{ config('app.name') }}</a>
                 <a href="{{ route('learn.index') }}">Learn</a>
                 <a href="{{ route('style-ideas.index') }}">Style ideas</a>
+                <a href="{{ route('page-ideas.index') }}">Page ideas</a>
 
                 <div class="ml-auto flex items-center gap-4">
                     @auth
