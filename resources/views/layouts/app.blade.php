@@ -15,6 +15,7 @@
             <nav class="mx-auto flex max-w-3xl flex-wrap items-center gap-x-6 gap-y-2 px-4 py-3 text-sm">
                 <a href="{{ route('home') }}" class="font-semibold">{{ config('app.name') }}</a>
                 <a href="{{ route('learn.index') }}">Learn</a>
+                <a href="{{ route('style-ideas.index') }}">Style ideas</a>
 
                 <div class="ml-auto flex items-center gap-4">
                     @auth

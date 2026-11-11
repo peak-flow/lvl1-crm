@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\StyleIdeaController;
 use App\Livewire\Admin\EditMembership;
 use App\Livewire\Admin\MemberList;
 use App\Livewire\Auth\Login;
@@ -14,6 +15,9 @@ Route::view('/', 'home')->name('home');
 
 Route::get('/learn', [LessonController::class, 'index'])->name('learn.index');
 Route::get('/learn/{lessonSlug}', [LessonController::class, 'show'])->name('learn.show');
+
+Route::get('/style-ideas', [StyleIdeaController::class, 'index'])->name('style-ideas.index');
+Route::get('/style-ideas/{styleSlug}', [StyleIdeaController::class, 'show'])->name('style-ideas.show');
 
 Route::middleware('guest')->group(function () {
     Route::livewire('/register', Register::class)->name('register');

@@ -12,6 +12,19 @@ export default defineConfig({
                 bunny('Instrument Sans', {
                     weights: [400, 500, 600],
                 }),
+                // Typefaces for the mock-ups under /style-ideas.
+                bunny('Zilla Slab', {
+                    weights: [400, 500, 700],
+                }),
+                bunny('Jost', {
+                    weights: [400, 500, 600],
+                }),
+                bunny('Barlow', {
+                    weights: [500, 600],
+                }),
+                bunny('Barlow Condensed', {
+                    weights: [600, 700],
+                }),
             ],
         }),
         tailwindcss(),
