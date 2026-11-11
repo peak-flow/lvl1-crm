@@ -17,6 +17,7 @@ Each feature ships with a lesson in `docs/lessons/` and is built one at a time.
 - [x] Feature 4: waiver and emergency contact page; ideas board locked until signed
 - [x] Lesson 4: `docs/lessons/04-waiver-and-emergency-contact.md`
 - [x] Style ideas section: Pegboard, Cutting mat, Safety signs (static mock-ups, no database, no lesson)
+- [x] Page ideas section: Events, Classes and courses (static mock-ups, no database, no lesson)
 
 ## Next (order not yet agreed)
 
@@ -33,6 +34,9 @@ Each feature ships with a lesson in `docs/lessons/` and is built one at a time.
 - [ ] Tool training sign-offs
 - [ ] Ideas board: moderation (hide or delete), once roles exist
 - [ ] Ideas board: walk-up kiosk use by non-members (needs a decision on fair voting without login)
+- [ ] Events page for real: calendar, "I am coming", members suggesting events (mock-up at `/page-ideas/events`)
+- [ ] Classes and courses for real: booking, waiting list, payment, sign-off on completion (mock-up at `/page-ideas/classes`)
+- [ ] Page idea: tools list with working / out-of-order status
 - [ ] Door access and tool interlocks (depends on the space's hardware)
 
 ## Open questions

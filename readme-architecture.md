@@ -95,6 +95,13 @@ No starter kit was used. Sign-up and login are hand-written so a lesson can expl
 - Their typefaces (Zilla Slab, Jost, Barlow, Barlow Condensed) are downloaded and self-hosted at build time by the fonts option in `vite.config.js`, and each page loads only its own with `@fonts([...])`.
 - Adding a style: add an entry to `STYLES` in the controller and a Blade file named after its slug.
 
+## Page ideas
+
+- `/page-ideas` is a public gallery of mock-ups for pages that do not exist yet. Like style ideas, it has no lesson, no lesson branch, and no database access.
+- `PageIdeaController` holds the made-up content. Each page is a Blade file in `resources/views/page-ideas/` named after its slug.
+- Unlike style ideas, these use the normal app layout and Tailwind classes, so the discussion is about what belongs on the page, not how it looks.
+- Adding a page idea: add an entry to `PAGES`, a method returning its example data, and a Blade file.
+
 ## Language tracks
 
 Laravel only for now. If a Python track is added later, the plan is one language-neutral spec per feature that each track implements.

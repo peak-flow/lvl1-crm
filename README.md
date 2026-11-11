@@ -11,6 +11,7 @@ Every feature comes with a lesson that explains what it does, the code behind it
 - Membership plans and statuses, with admins who can set them for any member
 - A waiver and emergency contact page that members complete before using the ideas board
 - Style ideas at `/style-ideas`: three mock-up designs of a finished member home page, using made-up data
+- Page ideas at `/page-ideas`: mock-ups of pages not built yet (events, classes and courses), using made-up data
 - A lessons section at `/learn`
 
 What comes next is in [README-todo.md](README-todo.md).
