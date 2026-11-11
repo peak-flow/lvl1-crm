@@ -1,58 +1,66 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# LVL1 Members
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A member site for our makerspace, built by members one feature at a time.
 
-## About Laravel
+Every feature comes with a lesson that explains what it does, the code behind it, and the PHP and Laravel ideas it uses. You can use the site, learn from it, or help build the next piece.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## What works today
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Sign up, sign in, and sign out
+- A lessons section at `/learn`
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+What comes next is in [README-todo.md](README-todo.md).
 
-## Learning Laravel
+## Lessons
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+You do not need to know PHP to start. Each lesson explains new ideas the first time they appear.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+| # | Lesson | Feature |
+| --- | --- | --- |
+| 1 | [Member sign-up and login](docs/lessons/01-member-sign-up-and-login.md) | Accounts, sign-in, sign-out |
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+The same lessons are shown inside the running site at `/learn`.
 
-## Agentic Development
+## Run it on your machine
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+You need PHP 8.3 or newer, [Composer](https://getcomposer.org), and [Node.js](https://nodejs.org).
 
-```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+```sh
+git clone https://github.com/peak-flow/lvl1-crm.git
+cd lvl1-crm
+composer install
+npm install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+composer run dev
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+Open <http://localhost:8000> and click **Join**. The database is a single SQLite file on your machine, so there is nothing else to install and nothing you can break.
 
-## Contributing
+## Run the tests
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```sh
+php artisan test
+```
 
-## Code of Conduct
+## How it is built
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- [Laravel 13](https://laravel.com) for the framework
+- [Livewire 4](https://livewire.laravel.com) for interactive pages, so everything stays in PHP
+- [Tailwind CSS](https://tailwindcss.com) for styling
+- SQLite for the database
+- [Pest](https://pestphp.com) for tests
 
-## Security Vulnerabilities
+More detail is in [readme-architecture.md](readme-architecture.md).
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Helping out
 
-## License
+1. Read the lesson for the feature you want to touch.
+2. Try the "Try it yourself" exercises at the end of it.
+3. Pick something from [README-todo.md](README-todo.md), or open an issue with your idea.
+4. Make your change on a branch, run the tests, and open a pull request.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+New features follow one rule: the feature and its lesson ship together. A lesson is a markdown file in `docs/lessons/`, named like `02-short-name.md`, and its first line is its title.
+
+Questions are welcome in the makerspace Discord.
