@@ -7,6 +7,7 @@ use App\Livewire\Admin\MemberList;
 use App\Livewire\Auth\Login;
 use App\Livewire\Auth\Register;
 use App\Livewire\Ideas\IdeaBoard;
+use App\Livewire\Members\WaiverForm;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home')->name('home');
@@ -21,7 +22,8 @@ Route::middleware('guest')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::view('/dashboard', 'dashboard')->name('dashboard');
-    Route::livewire('/ideas', IdeaBoard::class)->name('ideas.index');
+    Route::livewire('/waiver', WaiverForm::class)->name('waiver.edit');
+    Route::livewire('/ideas', IdeaBoard::class)->name('ideas.index')->middleware('waiver.signed');
     Route::post('/logout', LogoutController::class)->name('logout');
 
     Route::middleware('can:manage-members')->group(function () {

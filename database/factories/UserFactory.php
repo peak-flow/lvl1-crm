@@ -30,6 +30,9 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
+            'emergency_contact_name' => fake()->name(),
+            'emergency_contact_phone' => '502-555-0100',
+            'waiver_signed_at' => now(),
         ];
     }
 
@@ -40,6 +43,18 @@ class UserFactory extends Factory
     {
         return $this->state(fn (array $attributes) => [
             'email_verified_at' => null,
+        ]);
+    }
+
+    /**
+     * Indicate that the member has not signed the waiver or given a contact yet.
+     */
+    public function withoutWaiver(): static
+    {
+        return $this->state([
+            'emergency_contact_name' => null,
+            'emergency_contact_phone' => null,
+            'waiver_signed_at' => null,
         ]);
     }
 

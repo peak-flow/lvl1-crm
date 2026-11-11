@@ -4,6 +4,26 @@
     <h1 class="mt-4 text-2xl font-semibold">{{ $member->name }}</h1>
     <p class="mt-1 text-sm text-stone-600">{{ $member->email }}</p>
 
+    <dl class="mt-4 grid grid-cols-[auto_1fr] gap-x-6 gap-y-1 text-sm text-stone-700">
+        <dt class="font-medium">Emergency contact</dt>
+        <dd>
+            @if ($member->emergency_contact_name)
+                {{ $member->emergency_contact_name }}, {{ $member->emergency_contact_phone }}
+            @else
+                Not given yet
+            @endif
+        </dd>
+
+        <dt class="font-medium">Waiver</dt>
+        <dd>
+            @if ($member->hasSignedWaiver())
+                Signed {{ $member->waiver_signed_at->format('F j, Y') }}
+            @else
+                Not signed
+            @endif
+        </dd>
+    </dl>
+
     <form wire:submit="save" class="mt-6 space-y-4">
         <div>
             <label for="membershipPlanId" class="form-label">Plan</label>

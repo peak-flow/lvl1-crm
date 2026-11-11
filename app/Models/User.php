@@ -39,7 +39,13 @@ class User extends Authenticatable
             'password' => 'hashed',
             'membership_status' => MembershipStatus::class,
             'is_admin' => 'boolean',
+            'waiver_signed_at' => 'datetime',
         ];
+    }
+
+    public function hasSignedWaiver(): bool
+    {
+        return $this->waiver_signed_at !== null;
     }
 
     /**
