@@ -22,6 +22,9 @@ No starter kit was used. Sign-up and login are hand-written so a lesson can expl
 | `app/Models/` | `User` (members), `Idea`, `MembershipPlan` |
 | `app/Enums/MembershipStatus.php` | The four allowed membership statuses |
 | `app/Livewire/Admin/` | `MemberList` and `EditMembership`, admin only |
+| `app/Livewire/Members/WaiverForm.php` | Waiver and emergency contact page |
+| `app/Http/Middleware/EnsureWaiverIsSigned.php` | Sends members to the waiver page until they have signed |
+| `resources/views/partials/waiver-text.blade.php` | The waiver wording (placeholder) |
 | `app/Console/Commands/MakeMemberAdmin.php` | `php artisan members:make-admin {email}` |
 | `database/seeders/MembershipPlanSeeder.php` | Example plans |
 | `app/Http/Controllers/LogoutController.php` | Sign-out |
@@ -73,6 +76,16 @@ No starter kit was used. Sign-up and login are hand-written so a lesson can expl
 - `is_admin`, `membership_status` and `membership_plan_id` are deliberately not mass-assignable; they are set one at a time.
 - The first admin is made with `php artisan members:make-admin {email}`. There is no way to grant or remove admin from the site yet.
 - The seeder uses `firstOrCreate` by plan name, so it is safe to re-run and never overwrites an existing plan.
+
+## Waiver and emergency contact
+
+- `users` carries `emergency_contact_name`, `emergency_contact_phone`, and `waiver_signed_at`. An empty `waiver_signed_at` means not signed.
+- `User::hasSignedWaiver()` is the single place that decides whether a member has signed.
+- `/waiver` always edits the signed-in member; it takes no id from the address.
+- The `waiver.signed` middleware alias guards `/ideas`. New member-only features should add it. It is registered with Livewire as persistent middleware so it also runs on button presses.
+- The dashboard, the waiver page and the admin pages are not behind it, so a new member can reach the form and an admin is never locked out.
+- The waiver wording is a placeholder, not legal text. Only the date of agreement is stored, not which wording was agreed to.
+- Emergency contacts are visible to the member and to admins only.
 
 ## Language tracks
 

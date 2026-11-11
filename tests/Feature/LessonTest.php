@@ -8,6 +8,7 @@ it('lists the lessons', function () {
             'Lesson 1: Member sign-up and login',
             'Lesson 2: The ideas board',
             'Lesson 3: Membership plans, statuses, and admins',
+            'Lesson 4: Waiver and emergency contact',
         ]);
 });
 

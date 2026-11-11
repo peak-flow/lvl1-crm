@@ -9,6 +9,7 @@ Every feature comes with a lesson that explains what it does, the code behind it
 - Sign up, sign in, and sign out
 - An ideas board where members suggest improvements for the space and upvote them
 - Membership plans and statuses, with admins who can set them for any member
+- A waiver and emergency contact page that members complete before using the ideas board
 - A lessons section at `/learn`
 
 What comes next is in [README-todo.md](README-todo.md).
@@ -23,6 +24,7 @@ You do not need to know PHP to start. Each lesson explains new ideas the first t
 | 1 | [Member sign-up and login](docs/lessons/01-member-sign-up-and-login.md) | Accounts, sign-in, sign-out |
 | 2 | [The ideas board](docs/lessons/02-ideas-board.md) | Posting ideas, upvoting, your own database tables |
 | 3 | [Membership plans, statuses, and admins](docs/lessons/03-membership-plans.md) | Plans, statuses, admin-only pages, your own terminal command |
+| 4 | [Waiver and emergency contact](docs/lessons/04-waiver-and-emergency-contact.md) | A form that changes with the member, your own middleware |
 
 The same lessons are shown inside the running site at `/learn`.
 
@@ -35,6 +37,7 @@ Every lesson has its own Git branch. A branch holds the whole project exactly as
 | `lesson-01-sign-up-login` | Lesson 1 |
 | `lesson-02-ideas-board` | Lesson 2 |
 | `lesson-03-membership-plans` | Lesson 3 |
+| `lesson-04-waiver-emergency-contact` | Lesson 4 |
 | `main` | The newest lesson, plus any fixes since |
 
 To jump to a lesson, run these from the `lvl1-crm` project folder:

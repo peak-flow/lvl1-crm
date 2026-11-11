@@ -14,10 +14,13 @@ Each feature ships with a lesson in `docs/lessons/` and is built one at a time.
 - [x] Feature 3: membership plans, statuses, basic admin flag, admin pages to set plan and status
 - [x] Lesson 3: `docs/lessons/03-membership-plans.md`
 - [x] Start-here guide: `docs/lessons/00-how-laravel-and-livewire-fit-together.md`
+- [x] Feature 4: waiver and emergency contact page; ideas board locked until signed
+- [x] Lesson 4: `docs/lessons/04-waiver-and-emergency-contact.md`
 
 ## Next (order not yet agreed)
 
-- [ ] Liability waiver and emergency contact at sign-up
+- [ ] Replace the placeholder waiver wording with the space's real waiver (`resources/views/partials/waiver-text.blade.php`)
+- [ ] Record which version of the waiver a member agreed to, and ask again when the wording changes
 - [ ] Replace the example plans and prices with the space's real ones
 - [ ] Make statuses do something (for example, stop a banned member signing in)
 - [ ] Admin pages to add, edit and retire plans
